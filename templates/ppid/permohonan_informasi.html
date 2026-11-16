@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/Logo.jpg' %}" type="image/sm-icon">
+    <link rel="stylesheet" href="{% static 'ppid/css/styles.css' %}">
+    <title>Permohonan Informasi Publik</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <img src="{% static 'images/Logo.jpg' %}" alt="Logo PUPR">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Permohonan Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'informasi_berkala' %}">Informasi Berkala</a>
+                            <a href="{% url 'informasi_publik' %}">File Permohonan Informasi</a>
+                            {% comment %} <a href="{% url 'service3' %}">Service 3</a> {% endcomment %}
+                        </div>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="form-container">
+        <h2>Permohonan Informasi Publik</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+                <br>
+                <p style="font-size: small">
+                    Informasi yang diperoleh tidak akan disalahgunakan dan hanya digunakan sebagaimana mestinya
+                    sesuai dengan tujuan permohonan tersebut di atas. Segala akibat hukum dari Informasi ini setelah
+                    keluar dari Kantor Kementerian PUPR menjadi tanggung jawab Pemohon/Pengguna Informasi. <br><br><br>
+                    Keterangan : <br>
+                    *) Pilih salah satu <br>
+                    **) Dalam hal Informasi Publik yang diminta Pemohon telah tersedia di laman Kementerian
+                    PUPR, Pemohon dapat mengunduh dan mencetak secara mandiri. <br><br>
+
+                    Layanan Informasi Publik tidak dipungut biaya. Biaya penggandaan atau perekaman yang timbul
+                    ditanggung oleh Pemohon. <br>
+                    Informasi lebih lanjut dapat menghubungi PPID melalui No. Telepon/Faks: (021) 7228497.
+                </p>
+                <button type="submit" class="submit-button">Ajukan Permohonan</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

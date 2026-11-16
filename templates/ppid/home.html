@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPID BPPW SULUT</title>
+    <link rel="icon" href="{% static 'images/Logo.jpg' %}" type="image/sm-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'ppid/css/styles.css' %}">
+
+    <style>
+        {% if banner_images %}
+        .main-content {
+            background: url("{{ image.image.url }}"); 
+        }
+        {% endif %}
+        </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <img src="{% static 'images/Logo.jpg' %}" alt="Logo PUPR">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Permohonan Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'informasi_berkala' %}">Informasi Berkala</a>
+                            <a href="{% url 'informasi_publik' %}">File Permohonan Informasi</a>
+                            {% comment %} <a href="{% url 'service3' %}">Service 3</a> {% endcomment %}
+                        </div>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-content">
+        <div class="container">
+
+            <div class="banner-slider">
+                {% for image in banner_images %}
+                <div class="slide">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                </div>
+                {% endfor %}
+            </div>
+        
+            <div class="dot-navigation">
+                {% for image in banner_images %}
+                <span class="dot" onclick="currentSlide({{ forloop.counter0 }})"></span>
+                {% endfor %}
+            </div>
+    
+
+            <div class="main-icons">
+                <div class="icon-box">
+                    <a href="{% url 'permohonan_informasi' %}">
+                        <img src="{% static 'images/form_permohonan.png' %}" alt="Form Permohonan Informasi Publik">
+                        <p>Form Permohonan Informasi Publik</p>
+                    </a>
+                </div>
+                <div class="icon-box">
+                    <a href="{% url 'pengajuan_keberatan' %}">
+                        <img src="{% static 'images/form_pengajuan.png' %}" alt="Form Pengajuan Keberatan">
+                        <p>Form Pengajuan Keberatan</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="other-container">
+            <div class="service-icons">
+                {% comment %} <div class="service-box">
+                    <a href="#">
+                        <img src="{% static 'images/daftar_informasi.png' %}" alt="Daftar Informasi Publik">
+                        <p>Daftar Informasi Publik Perangkat Daerah</p>
+                    </a>
+                </div> {% endcomment %}
+                <div class="service-box">
+                    <a href="{% url 'cek_informasi' %}">
+                        <img src="{% static 'images/cek_status_permohonan.png' %}" alt="Cek Status Permohonan">
+                        <p>Cek Status Permohonan Informasi Publik</p>
+                    </a>
+                </div>
+                <div class="service-box">
+                    <a href="{% url 'cek_keberatan' %}">
+                        <img src="{% static 'images/cek_status_keberatan.png' %}" alt="Cek Status Pengajuan Keberatan">
+                        <p>Cek Status Pengajuan Keberatan Informasi Publik</p>
+                    </a>
+                </div>
+                <div class="service-box">
+                    <a href="{% url 'statistics' %}">
+                        <img src="{% static 'images/statistik.png' %}" alt="Statistik Layanan Informasi Publik">
+                        <p>Statistik Layanan Informasi Publik</p>
+                    </a>
+                </div>
+                {% comment %} <div class="service-box">
+                    <a href="#">
+                        <img src="{% static 'images/kanal_pengaduan.png' %}" alt="Kanal Pengaduan Resmi">
+                        <p>Kanal Pengaduan Resmi</p>
+                    </a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </section>
+
+    {% comment %} <section class="content">
+        <div class="other-container">
+            <h2>Latest Announcements</h2>
+            <p>Stay updated with the latest news from the PPID.</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    {% for content in contents %}
+                    <div class="carousel-item">
+                        <h2>{{ content.title }}</h2>
+                        <p>{{ content.description }}</p>
+                        <a href="{{ content.file.url }}" class="view-button">Lihat</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav left" onclick="slideLeft()">&#10094;</button>
+                <button class="carousel-nav right" onclick="slideRight()">&#10095;</button>
+            </div>
+        </div>
+    </section> {% endcomment %}
+
+    {% comment %} <section class="content">
+        <div class="other-container">
+            <h2>Latest Announcements</h2>
+            <p>Stay updated with the latest news from the PPID.</p>
+            <div class="carousel-container">
+                <div class="carousel">
+                    {% for content in contents %}
+                    <div class="carousel-item">
+                        <h2>{{ content.title }}</h2>
+                        <p>{{ content.description }}</p>
+                        <a href="{{ content.file.url }}" class="view-button">Lihat</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav left" onclick="slideLeft()">&#10094;</button>
+                <button class="carousel-nav right" onclick="slideRight()">&#10095;</button>
+            </div>
+        </div>
+    </section> {% endcomment %}
+    
+
+    {% comment %} <section id="about">
+        <section class="about-section">
+            <div class="other-container">
+                <h1>About PPID</h1>
+                <p>PPID merupakan singkatan dari Pejabat Pengelola Informasi dan Dokumentasi.
+                    PPID memiliki pengertian yaitu pejabat yang bertanggung jawab di bidang penyimpanan, 
+                    pendokumentasian, penyediaan, dan/atau pelayanan informasi di badan publik. Setiap 
+                    badan publik baik Pemerintah maupun Non Pemerintah, diwajibkan memiliki pejabat PPID. 
+                    Hal ini sejalan dengan Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi 
+                    Publik (UU KIP), dimana harus adanya keterbukaan informasi publik yang diberikan pada 
+                    masyarakat.  Masing-masing badan publik memiliki peraturan terkait PPID-nya sendiri 
+                    yang umumnya dituang dalam bentuk Surat Keputusan atau Peraturan Kepala Daerah. 
+                </p>
+                
+                <h2>Our Mission</h2>
+                <p>To provide accurate and timely information to the public, ensuring transparency and accountability in government operations.</p>
+    
+                <h2>Our Vision</h2>
+                <p>To be a trusted source of public information, empowering citizens with the knowledge they need to participate in the democratic process.</p>
+    
+                <h2>Our Team</h2>
+                <p>We are a dedicated team of professionals committed to upholding the principles of transparency and openness in government. Our team works tirelessly to provide you with the information you need.</p>
+    
+                <div class="team">
+                    <div class="team-member">
+                        <img src="{% static 'images/director.png' %}" alt="Team Member 1">
+                        <h3>Netanya Rira</h3>
+                        <p>Director</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{% static 'images/deputy.png' %}" alt="Team Member 2">
+                        <h3>Kirsten Danie</h3>
+                        <p>Deputy Director</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{% static 'images/officer.png' %}" alt="Team Member 3">
+                        <h3>Syalom Warongan</h3>
+                        <p>Information Officer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </section> {% endcomment %}
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 PPID. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'ppid/js/scripts.js' %}"></script>
+</body>
+</html>

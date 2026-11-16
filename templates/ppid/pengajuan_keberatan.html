@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/Logo.jpg' %}" type="image/sm-icon">
+    <link rel="stylesheet" href="{% static 'ppid/css/styles.css' %}">
+    <title>Form Pengajuan Keberatan</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header-container">
+            <img src="{% static 'images/Logo.jpg' %}" alt="Logo PUPR">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Permohonan Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'informasi_berkala' %}">Informasi Berkala</a>
+                            <a href="{% url 'informasi_publik' %}">File Permohonan Informasi</a>
+                            {% comment %} <a href="{% url 'service3' %}">Service 3</a> {% endcomment %}
+                        </div>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="form-container">
+        <h2>Form Pengajuan Keberatan</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% comment %} <div class="form-group">
+                {{ form.kode_permohonan.label_tag }}<br>
+                {{ form.kode_permohonan }}
+            </div>
+            <div class="form-group">
+                {{ form.nik.label_tag }}<br>
+                {{ form.nik }}
+            </div>
+            <div class="form-group">
+                {{ form.alasan_keberatan.label_tag }}<br>
+                {{ form.alasan_keberatan }}
+            </div>
+            <div class="form-group">
+                {{ form.nama_kuasa.label_tag }}<br>
+                {{ form.nama_kuasa }}
+            </div>
+            <div class="form-group">
+                {{ form.alamat_kuasa.label_tag }}<br>
+                {{ form.alamat_kuasa }}
+            </div>
+            <div class="form-group">
+                {{ form.nomor_telepon.label_tag }}<br>
+                {{ form.nomor_telepon }}
+            </div>
+            <div class="form-group">
+                {{ form.kasus_posisi.label_tag }}<br>
+                {{ form.kasus_posisi }}
+            </div>
+            <div class="form-group">
+                {{ form.surat_keberatan.label_tag }}<br>
+                {{ form.surat_keberatan }}
+            </div> {% endcomment %}
+            <button type="submit" class="submit-button">Ajukan Keberatan</button>
+        </form>
+    </div>
+</body>
+</html>

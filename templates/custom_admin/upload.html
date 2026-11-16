@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Content</title>
+    <link rel="icon" href="{% static 'images/Logo.jpg' %}" type="image/sm-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'ppid/admin.css' %}">
+</head>
+<body>
+    <h1>Upload New Content</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br><br>
+        <label for="file">File:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

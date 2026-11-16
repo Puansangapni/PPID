@@ -1,0 +1,963 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    /* display: flex; */
+    background-color: #1a237e;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    display: flex;
+    background-color: #1a237e;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.header-container img {
+    width: 30px;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------ navigation bar ----------------------------------------------------- */
+/* ------------------------------------------------------------------- style ------------------------------------------------------- */
+
+/* .navbar {
+    float: right;
+    z-index: 1030;
+} */
+
+/* .navbar {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: -100px;
+    width: 100%; 
+    z-index: 1030;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    transition: top 0.3s;
+    float: right;
+} */
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    position: relative;
+}
+
+/* .menu li a .dropdown .dropbtn{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+} */
+
+/* Dropdown Menu Styling */
+.dropdown {
+    position: relative;
+}
+
+.menu li a .dropdown .dropbtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* .dropdown-content a:hover {
+    background-color: #f1f1f1;
+} */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn, 
+.navbar ul li a:hover {
+    background-color: #11164f;
+    border-radius: 5px;
+}
+
+/* --------------------------------------------------------------- banner --------------------------------------------------------- */
+/* --------------------------------------------------------------- styles ------------------------------------------------------ */
+
+.main-content {
+    /* background: url("{{ image.image.url }}");  */
+    /* background-size: cover;  */
+    background-position: center; 
+    padding: 40px 0;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+}
+
+/* .logo {
+    width: 100px;
+    float: left;
+} */
+
+/* .banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+} */
+
+.banner-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+/* Styles for the slider dot navigation */
+.dot-navigation {
+    text-align: center;
+    position: absolute;
+    bottom: 20px; 
+    width: 100%;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb; /* Default dot color */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.active, .dot:hover {
+    background-color: #717171; /* Active and hover dot color */
+}
+
+/* Slider button styles */
+/* button.prev, button.next {
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    border: none;
+    padding: 15px; 
+    cursor: pointer;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; 
+}
+
+button.prev {
+    left: 20px; 
+}
+
+button.next {
+    right: 20px;
+}
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8); 
+} */
+
+/* ------------------------------------------------------ main icons ---------------------------------------------- */
+/* -------------------------------------------------------- styles ------------------------------------------------------------------------------ */
+
+/* .main-content {
+    background: #0d47a1;
+    padding: 40px 0;
+    text-align: center;  
+} */
+
+/* .slide img {
+    width: 100%;
+    height: 100%;
+} */
+
+.main-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0849f9; 
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.icon-box a{
+    text-decoration: none;
+}
+
+.icon-box p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.services {
+    background-color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.other-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.service-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    width: 150px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-box a{
+    text-decoration: none;
+}
+
+.service-box img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+     .service-box {
+        flex: 0 1 calc(100% - 20px); 
+    }
+
+    .main-icons {
+        width: 350px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+    }
+
+    .service-icons,
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+
+     .service-box, .team-member {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    /* .banner-slider .slide,
+    .carousel-item {
+        max-width: 80%;
+    } */
+
+    
+    .icon-box img, .service-box img {
+        width: 100px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .icon-box img, .service-box img {
+        width: 35px; 
+    }
+}
+
+
+/* Responsive Breakpoints */
+/* @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-icons,
+    .service-icons,
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-box, .service-box, .team-member {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .banner-slider .slide,
+    .carousel-item {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu li {
+        margin: 0 5px;
+    }
+
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .team-member {
+        width: 100%;
+        max-width: 250px;
+    }
+} */
+
+/* -------------------------------------------------- akhir dari tes doang ---------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.content {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* .grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 48%;
+}
+
+.card h3 {
+    margin-top: 0;
+} */
+
+
+
+.carousel-container {
+    position: relative;
+    max-width: 80%; /* Make the container flexible and centered */
+    margin: 0 auto; /* Center the carousel on the page */
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px; /* Add spacing between items */
+}
+
+.carousel-item {
+    flex: 0 0 45%; /* Make each item take 45% of the container */
+    box-sizing: border-box;
+    display: flex; /* Use flexbox to control the layout */
+    flex-direction: column; /* Arrange content in a column */
+    justify-content: space-between; /* Distribute space between content */
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    margin: 10px 0;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav.left {
+    left: 0; /* Position the button slightly outside */
+}
+
+.carousel-nav.right {
+    right: 0; /* Position the button slightly outside */
+}
+
+.carousel-nav:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken on hover */
+}
+
+.dot-navigation {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171; /* Color for the active dot */
+}
+
+.view-button {
+    align-self: center; /* Center the button */
+    margin-top: 10px; /* Add space above the button */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.socials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.socials li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.socials li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .menu li a {
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .main-content, .services, .about-section, .footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container, .main-icons, .service-icons, .team {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar .menu li a {
+        font-size: 14px;
+    }
+
+    .header-container {
+        padding: 10px 20px;
+    }
+
+    .carousel-item {
+        padding: 10px;
+    }
+} */
+
+/* ------------------------------------------- style semua form --------------------------------------------------- */
+/* ---------------------------------------------- style form ------------------------------------------------------ */
+
+.form-container {
+    background-color: #fff;
+    border: 2px solid #000080; /* Dark Blue Border */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e3b87;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control,
+.form-control-file,
+.radio-list {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #2e3b87;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    font-size: 16px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select.form-control {
+    height: auto; 
+    line-height: normal; 
+}
+
+/* .radio-list {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+} */
+
+.grouped-radios fieldset {
+    border: 1px solid #2e3b87;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.grouped-radios legend {
+    font-weight: bold;
+    color: #2e3b87;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #002f5d;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #004080;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+    
+    .radio-group {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .menu li {
+        width: 100%;
+    }
+
+    .navbar .menu li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 20px;
+    }
+
+    .navbar .menu li a {
+        font-size: 14px;
+    }
+}
+
+/* ------------------------------------------------- style about ------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+.about-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.about-section h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-section p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.about-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #007bff;
+    text-align: center;
+}
+
+.about-section .team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.team-member p {
+    color: #777;
+}
+
+/* -------------------------------------------------------- style upload content --------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.upload-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.upload-container h1 {
+    color: #d32f2f;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.upload-container label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.upload-container input[type="text"],
+.upload-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #d32f2f;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.upload-container input[type="file"] {
+    border: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.upload-container button {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.upload-container button:hover {
+    background-color: #b71c1c;
+}
+
+.upload-container textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* ----------------------------------------------------------- style statistik ----------------------------------------------------------- */
+/* ---------------------------------------------------------------- style ---------------------------------------------------------------- */
+
+/* .statistics {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.statistic-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.statistic-box h2 {
+    margin: 0 0 10px;
+}
+
+.statistic-box p {
+    font-size: 2em;
+    margin: 0;
+} */
+
+.statistics-container {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.statistics-title {
+    font-size: 24px;
+    color: #002855;
+    margin-bottom: 20px;
+}
+
+.statistics-circles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #1a2a44;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 10px;
+}
+
+.circle-value {
+    font-size: 32px;
+    color: #f5a623;
+}
+
+.circle-title {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ------------------------------------------- informasi publik -------------------------------------------------- */
+/* ------------------------------------------------- style --------------------------------------------- */
+
+.information-container {
+    padding: 20px;
+}
+
+.information-section {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #002366;
+    color: white;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+

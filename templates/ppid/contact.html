@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/Logo.jpg' %}" type="image/sm-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'ppid/css/styles.css' %}">
+    <title>Contact Us</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <img src="{% static 'images/Logo.jpg' %}" alt="Logo PUPR">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Permohonan Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'informasi_berkala' %}">Informasi Berkala</a>
+                            <a href="{% url 'informasi_publik' %}">File Permohonan Informasi</a>
+                            {% comment %} <a href="{% url 'service3' %}">Service 3</a> {% endcomment %}
+                        </div>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="form-container">
+        <h2>Send Us a Message</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% comment %} <div class="form-group">
+                {{ form.name.label_tag }}<br>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label_tag }}<br>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                {{ form.message.label_tag }}<br>
+                {{ form.message }}
+            </div> {% endcomment %}
+            
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

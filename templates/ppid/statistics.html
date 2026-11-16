@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/Logo.jpg' %}" type="image/sm-icon">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="{% static 'ppid/css/styles.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+            <img src="{% static 'images/Logo.jpg' %}" alt="Logo PUPR">
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Permohonan Informasi</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'informasi_berkala' %}">Informasi Berkala</a>
+                            <a href="{% url 'informasi_publik' %}">File Permohonan Informasi</a>
+                            {% comment %} <a href="{% url 'service3' %}">Service 3</a> {% endcomment %}
+                        </div>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="statistics-container">
+        <h2 class="statistics-title">Statistik Layanan Informasi Publik</h2>
+        <div class="statistics-circles">
+            {% comment %} <div class="circle">
+                <div class="circle-value">{{ total_information }}</div>
+                <div class="circle-title">Daftar Informasi Publik</div>
+            </div> {% endcomment %}
+            <div class="circle">
+                <div class="circle-value">{{ total_information }}</div>
+                <div class="circle-title">Jumlah Permohonan</div>
+            </div>
+            {% comment %} <div class="circle">
+                <div class="circle-value">{{ approved_requests }}</div>
+                <div class="circle-title">Jumlah Permohonan Disetujui</div>
+            </div>
+            <div class="circle">
+                <div class="circle-value">{{ objections_requests }}</div>
+                <div class="circle-title">Jumlah Permohonan Ditolak</div>
+            </div> {% endcomment %}
+            <div class="circle">
+                <div class="circle-value">{{ total_objections }}</div>
+                <div class="circle-title">Jumlah Keberatan</div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
